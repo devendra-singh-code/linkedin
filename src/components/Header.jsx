@@ -115,7 +115,8 @@ const Header = () => {
   const handleLogin = () => {};
 
   return (
-    <div className=" py-1 w-full px-5 bg-white fixed left-0 right-0 z-20 shadow-sm shadow-gray-500">
+    // <div className=" py-1 w-full px-5 bg-white fixed left-0 right-0 z-20 ">
+    <div className={` py-1 w-full px-5 bg-white ${authStatus === true ? 'fixed left-0 right-0 z-20' : 'block'} `}>
       <div className="max-w-[1200px] m-auto md:px-5">
         <div className="flex items-center justify-between z-10">
           <div onClick={logoSelect}>
@@ -170,18 +171,20 @@ const Header = () => {
             {!authStatus && (
               <li>
                 <div className="px-2 flex gap-2">
-                  <button
-                    onClick={() => navigate("/signup")}
-                    className="border border-blue-600 outline-none px-6 cursor-pointer py-[8px] rounded-full text-base font-semibold text-blue-600 hover:bg-blue-100 text-nowrap"
-                  >
-                    Sign in
-                  </button>
+
                   <button
                     onClick={() => navigate("/login")}
-                    className=" px-6 py-[8px] rounded-full text-base font-semibold outline-none cursor-pointer bg-blue-600 text-white hover:bg-blue-800 text-nowrap"
+                    className=" px-6 py-[8px] rounded-full text-[15px] font-semibold outline-none cursor-pointer text-gray-600  hover:text-black text-nowrap"
                   >
                     Join now
                   </button>
+                  <button
+                    onClick={() => navigate("/signup")}
+                    className="border border-blue-600 outline-none px-6 cursor-pointer py-[8px] rounded-full text-[15px] font-semibold text-blue-600 hover:bg-blue-100 text-nowrap"
+                  >
+                    Sign in
+                  </button>
+
                 </div>
               </li>
             )}
@@ -203,7 +206,7 @@ const Header = () => {
           </ul>
         </div>
         {scrollDirection && (
-          <div className=" animate-fade  w-full m-auto bg-white border-t border-gray-100 py-1 ">
+          <div className={`animate-fade ${authStatus === true ? 'block' : 'hidden'} w-full m-auto bg-white border-t border-gray-100 py-1 `}>
             <div className="  flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-green-600"></div>

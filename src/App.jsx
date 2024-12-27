@@ -39,11 +39,10 @@ const App = () => {
   return !loading ? (
     <>
       {addPost && <Post />}
-
       <div className="">
         <Header />
       </div>
-      <div onClick={handleOut}>
+      <div onClick={handleOut} className="bg-white">
         <Container>
           <Outlet />
         </Container>

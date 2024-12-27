@@ -8,3 +8,23 @@
     /* font-family: Poppins; */
     font-family: sans-serif;
 }
+
+#fullscreen{
+    /* background-color: yellow; */
+    position: relative;
+    width: 100vw;
+    height: 140vh;
+    z-index: 0;
+  
+}
+#fullscreen::after{
+    position: absolute;
+    content: "";
+    background: url('./assets/4.png') no-repeat ;
+    background-size: cover;
+    width: 100vw;
+    height: 140vh;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
